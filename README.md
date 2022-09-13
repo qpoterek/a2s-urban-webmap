@@ -2,14 +2,22 @@
 
 This repository contains a webmap that was originally produced for [A²S](https://a2s.unistra.fr/index.php/Accueil) in 2016. Its aim was to showcase the results of a pipeline prototype written in R, for extracting artificial land surfaces from satellite imagery. Said surfaces were obtained by classifying SPOT images, using a Random Forest classifier, Copernicus data and specific sampling scheme.
 
+<p align="center">
+	<a href="https://poterekq.github.io/a2s-urban-webmap/">
+		<img src="https://img.shields.io/badge/-🌍_ACCESS_WEBMAP_-e0f7fa?style=for-the-badge">
+	</a>
+</p>
+
 <div class="warning" style='background-color:#e1f5fe; color: #0277bd; border-left: solid #0277bd 8px; border-radius: 8px; padding: 8px 16px;'>
-    <p style='margin-top:1em;'><strong>Note</strong></p>
-    <p>
-    The data showcased in this webmap is the result of a processing pipeline that was still in its infancy, and that would later be adapted so as to process Sentinel-2 images. The corresponding pipeline would then become the prototype that <a href="https://www.theia-land.fr/product/urba-opt/">Urba-Opt</a> was built upon.
-    </p>
-    <p>
-    The webmap was briefly updated in September 2022, following the new standards in web development. However, the original pipeline and data were not modified.
-    </p>
+    <span>
+        <p style='margin-top:1em;'><strong>Note</strong></p>
+        <p>
+        The data showcased in this webmap is the result of a processing pipeline that was still in its infancy, and that would later be adapted so as to process Sentinel-2 images. The corresponding pipeline would then become the prototype that <a href="https://www.theia-land.fr/product/urba-opt/">Urba-Opt</a> was built upon.
+        </p>
+        <p>
+        The webmap was briefly updated in September 2022, following the new standards in web development. However, the original pipeline and data were not modified.
+        </p>
+    </span>
 </div>
 
 ## Technologies
@@ -23,14 +31,14 @@ This repository contains a webmap that was originally produced for [A²S](https:
 
 ## 📁 Project structure
 
-This project includes the following directories:
+This project includes the following directories in the `gh-pages` branch:
 
 - `data/` — TopoJSON files containing classification results and region of interest.
 - `dist/` — Build directory.
 
 ## 🏗️ Build
 
-In order to build this portfolio, Node.js v16.15.0+ is required.
+Node.js v16.15.0 was used, but earlier versions might work too.
 
 The following lines can be used to run the webmap in a built-in development server:
 
