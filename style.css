@@ -1,0 +1,249 @@
+@import "node_modules/ol/ol.css";
+@import "node_modules/normalize-css/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+	--border-gap: 12px;
+	--tile-gap: 4px;
+	--button-height: 36px;
+	--header-height: 120px;
+
+	font-family: "Roboto", system-ui, sans-serif;
+	line-height: 0;
+}
+
+html, body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  color: #dedede;
+	user-select: none;
+}
+
+body {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: var(--header-height) auto;
+}
+
+.dark-glass {
+	background-color: rgba(30, 30, 32, 0.8) !important;
+	box-shadow: 0px 8px 8px -8px rgba(30, 30, 32, 0.9) !important;
+	backdrop-filter: blur(5px) !important;
+	border: 1px solid rgba(30, 30, 32, 0.33) !important;
+	border-radius: 8px !important;
+}
+
+.interactable {
+	transition: 0.15s ease-in-out;
+}
+
+.interactable:hover {
+	background-color: rgba(125, 125, 125, 0.25) !important;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 24px;
+	margin: var(--border-gap);
+	z-index: 99;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+header > p {
+	color: #aeaeae;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#layer-switch,
+#information,
+.ol-control {
+	top: calc(var(--header-height) + var(--tile-gap));
+}
+
+
+#layer-switch {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+	padding: 12px 24px;
+	position: fixed; 
+	z-index: 99;
+	left: var(--border-gap);
+}
+
+#layer-switch p {
+	font-weight: 700;
+}
+
+.checkbox-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+.checkbox,
+.checkbox input[type=checkbox],
+.checkbox label {
+	cursor: pointer;
+}
+
+input[type=checkbox] {
+	display:none;
+}
+
+input[type=checkbox] + label:before {
+	content: "";  
+	display: inline-block;
+	width: 24px;  
+	height: 24px;  
+	margin-right: 16px;
+	vertical-align: middle;
+	background-color: rgba(0, 0, 0, 0.25);
+	border: 2px solid rgba(255, 255, 255, 0.25);
+	border-radius: 8px;
+	transition: background-color 0.15s ease-in-out;
+}
+
+input[type=checkbox]:not(:checked) + label:hover:before {
+	background-color: rgba(125, 125, 125, 0.25);
+}
+
+#layer_1992:checked + label:before, #f1992 {
+	background-color: rgb(255,255,204);
+}
+
+#layer_1996:checked + label:before, #f1996 {
+	background-color: rgb(255,237,160);
+}
+
+#layer_1998:checked + label:before, #f1998 {
+	background-color: rgb(254,217,118);
+}
+
+#layer_1999:checked + label:before, #f1999 {
+	background-color: rgb(254,178,76);
+}
+
+#layer_2000:checked + label:before, #f2000 {
+	background-color: rgb(253,141,60);
+}
+
+#layer_2001:checked + label:before, #f2001 {
+	background-color: rgb(252,78,42);
+}
+
+#layer_2004:checked + label:before, #f2004 {
+	background-color: rgb(227,26,28);
+}
+
+#layer_2010:checked + label:before, #f2010 {
+	background-color: rgb(189,0,38);
+}
+
+#layer_2011:checked + label:before, #f2011 {
+	background-color: rgb(128,0,38);
+}
+
+#information {
+	cursor: pointer;
+	position: fixed;
+	z-index: 100;
+	right: var(--border-gap);
+	height: var(--button-height);
+	width: var(--button-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#information svg {
+	height: 24px;
+	width: 24px;
+}
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#tooltip {
+	z-index: 99;
+	position: fixed;
+	right: var(--border-gap);
+	top: calc(var(--header-height) + var(--tile-gap) * 4 + var(--button-height));
+	width: 236px;
+	line-height: 1.15;
+	font-size: 0.8em;
+	display: flex;
+	flex-direction: column;
+	padding: 4px 16px;
+	transition: opacity 0.15s ease-in-out;
+}
+
+#tooltip p {
+	hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+}
+
+#tooltip p:last-of-type {
+	align-self: center;
+	font-weight: 700;
+}
+
+table {
+	text-align: center;
+	border: collapse;
+	line-height: 1.5;
+}
+
+th {
+	color: white; 
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+}
+
+.ol-scale-line {
+	line-height: 1;
+	background-color: rgba(30, 30, 32, 0.8);
+}
+
+.ol-scale-line * {
+	color: #dedede;
+	border-color: #dedede;
+}
+
+.ol-control {
+  background-color: transparent;
+}
+
+.ol-zoom {
+	position: fixed;
+	display: flex;
+  column-gap: 8px;
+	left: unset;
+	right: 58px;
+}
+
+.ol-zoom button {
+	height: var(--button-height) !important;
+	width: var(--button-height) !important;
+	color: #dedede !important;
+}
+
+.ol-control button:hover,
+.ol-control button:focus {
+  outline: none;
+}
