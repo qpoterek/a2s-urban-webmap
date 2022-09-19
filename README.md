@@ -20,11 +20,12 @@ This repository contains a webmap that was originally produced for [A²S](https:
     </span>
 </div>
 
-## Technologies
+## 🖥️ Technologies
 
 <p align="center">
 	<img alt="R" src="https://img.shields.io/badge/-r-276DC3?style=for-the-badge&logo=r&logoColor=white">
 	<img alt="Openlayers" src="https://img.shields.io/badge/-Openlayers-039be5?style=for-the-badge&logo=openlayers&logoColor=white">
+    <img alt="Vite" src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">
 	<img alt="JavaScript" src="https://img.shields.io/badge/-javascript-fdd835?style=for-the-badge&logo=javascript&logoColor=black">
 	<img alt="NPM" src="https://img.shields.io/badge/-npm-e53935?style=for-the-badge&logo=npm&logoColor=white">
 </p>
@@ -36,7 +37,7 @@ This project includes the following directories in the `gh-pages` branch:
 - `data/` — TopoJSON files containing classification results and region of interest.
 - `dist/` — Build directory.
 
-## 🏗️ Build
+## 🏗️ Run locally
 
 Node.js v16.15.0 was used, but earlier versions might work too.
 
